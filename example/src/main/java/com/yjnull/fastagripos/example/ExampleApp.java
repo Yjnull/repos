@@ -2,6 +2,8 @@ package com.yjnull.fastagripos.example;
 
 import android.app.Application;
 
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
+import com.yjnull.latte.pos.icon.FontECModule;
 import com.yjnull.latte_core.app.Latte;
 
 /**
@@ -13,6 +15,8 @@ public class ExampleApp extends Application {
     public void onCreate() {
         super.onCreate();
         Latte.init(this)
+                .withIcon(new FontAwesomeModule())
+                .withIcon(new FontECModule())
                 .withApiHost("http://127.0.0.1/")
                 .configure();
     }
