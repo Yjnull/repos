@@ -13,11 +13,11 @@ import java.util.HashMap;
 
 public class Configurator {
 
-    private static final HashMap<String, Object> LATTE_CONFIGS = new HashMap<>();
+    private static final HashMap<Object, Object> LATTE_CONFIGS = new HashMap<>();
     private static final ArrayList<IconFontDescriptor> ICONS = new ArrayList<>();
 
     private Configurator() {
-        LATTE_CONFIGS.put(ConfigType.CONFIG_READY.name(), false);
+        LATTE_CONFIGS.put(ConfigType.CONFIG_READY, false);
     }
 
     //--- Singleton --------------------------------------------------------------------------------
@@ -29,17 +29,17 @@ public class Configurator {
         return Holder.INSTANCE;
     }
 
-    final HashMap<String, Object> getLatteConfigs() {
+    final HashMap<Object, Object> getLatteConfigs() {
         return LATTE_CONFIGS;
     }
 
     public final void configure() {
         initIcons();
-        LATTE_CONFIGS.put(ConfigType.CONFIG_READY.name(), true);
+        LATTE_CONFIGS.put(ConfigType.CONFIG_READY, true);
     }
 
     public final Configurator withApiHost(String host) {
-        LATTE_CONFIGS.put(ConfigType.API_HOST.name(), host);
+        LATTE_CONFIGS.put(ConfigType.API_HOST, host);
         return this;
     }
 
@@ -58,7 +58,7 @@ public class Configurator {
     }
 
     private void checkConfiguration() {
-        final boolean isReady = (boolean) LATTE_CONFIGS.get(ConfigType.CONFIG_READY.name());
+        final boolean isReady = (boolean) LATTE_CONFIGS.get(ConfigType.CONFIG_READY);
         if (!isReady) {
             throw new RuntimeException("Configuration is not ready, call configure");
         }
@@ -67,7 +67,7 @@ public class Configurator {
     @SuppressWarnings("unchecked")
     final <T> T getConfiguration(Enum<ConfigType> key) {
         checkConfiguration();
-        return (T) LATTE_CONFIGS.get(key.name());
+        return (T) LATTE_CONFIGS.get(key);
     }
 
 }
