@@ -1,10 +1,14 @@
 package com.yjnull.latte_core.net;
 
+import android.content.Context;
+
 import com.yjnull.latte_core.net.callback.IError;
 import com.yjnull.latte_core.net.callback.IFailure;
 import com.yjnull.latte_core.net.callback.IRequest;
 import com.yjnull.latte_core.net.callback.ISuccess;
 import com.yjnull.latte_core.net.callback.RequestCallbacks;
+import com.yjnull.latte_core.ui.LatteLoader;
+import com.yjnull.latte_core.ui.LoaderStyle;
 
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -27,6 +31,8 @@ public class RestClient {
     private final IFailure FAILURE;
     private final IError ERROR;
     private final RequestBody BODY;
+    private final LoaderStyle LOADER_STYLE;
+    private final Context CONTEXT;
 
     public RestClient(String url,
                       Map<String, Object> params,
@@ -34,7 +40,9 @@ public class RestClient {
                       ISuccess success,
                       IFailure failure,
                       IError error,
-                      RequestBody body) {
+                      RequestBody body,
+                      Context context,
+                      LoaderStyle loaderStyle) {
         this.URL = url;
         PARAMS.putAll(params);
         this.REQUEST = request;
@@ -42,6 +50,8 @@ public class RestClient {
         this.FAILURE = failure;
         this.ERROR = error;
         this.BODY = body;
+        this.CONTEXT = context;
+        this.LOADER_STYLE = loaderStyle;
     }
 
     public static RestClientBuilder builder() {
@@ -54,6 +64,10 @@ public class RestClient {
 
         if (REQUEST != null) {
             REQUEST.onRequestStart();
+        }
+
+        if (LOADER_STYLE != null) {
+            LatteLoader.showLoading(CONTEXT, LOADER_STYLE);
         }
 
         switch (method) {
@@ -84,7 +98,8 @@ public class RestClient {
                 REQUEST,
                 SUCCESS,
                 FAILURE,
-                ERROR
+                ERROR,
+                LOADER_STYLE
         );
     }
 
