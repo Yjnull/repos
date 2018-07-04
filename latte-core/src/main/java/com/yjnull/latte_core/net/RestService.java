@@ -50,7 +50,7 @@ public interface RestService {
      * get 的变种
      * retrofit 默认的download 会将文件一次性下载到内存里，文件下载完毕后，再统一写入到文件里
      * 问题：当文件过大时，会导致内存溢出，导致 app 闪退或报错
-     * 解决：Streaming 注解，边下载边写入文件
+     * 解决：Streaming 注解，边下载边写入文件, 同时注意需异步执行
      */
     @Streaming
     @GET

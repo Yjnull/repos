@@ -28,7 +28,7 @@ public class RestCreator {
     }
 
     private static final class ParamsHolder {
-        public static final WeakHashMap<String, Object> PARAMS = new WeakHashMap<>();
+        private static final WeakHashMap<String, Object> PARAMS = new WeakHashMap<>();
     }
 
     private static final class RetrofitHolder {
