@@ -1,4 +1,4 @@
-package com.yjnull.latte_core.ui;
+package com.yjnull.latte_core.ui.loader;
 
 /**
  * Created by Yangya on 2018/7/4

@@ -1,4 +1,4 @@
-package com.yjnull.latte_core.ui;
+package com.yjnull.latte_core.ui.loader;
 
 import android.content.Context;
 import android.text.TextUtils;

@@ -1,4 +1,4 @@
-package com.yjnull.latte_core.ui;
+package com.yjnull.latte_core.ui.loader;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatDialog;
@@ -8,7 +8,7 @@ import android.view.WindowManager;
 
 import com.wang.avi.AVLoadingIndicatorView;
 import com.yjnull.latte_core.R;
-import com.yjnull.latte_core.util.DimenUtil;
+import com.yjnull.latte_core.util.dimen.DimenUtil;
 
 import java.util.ArrayList;
 

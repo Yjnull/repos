@@ -1,4 +1,4 @@
-package com.yjnull.latte_core.util;
+package com.yjnull.latte_core.util.file;
 
 import android.content.ContentResolver;
 import android.content.Context;

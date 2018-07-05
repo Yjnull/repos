@@ -3,7 +3,7 @@ package com.yjnull.latte_core.net.interceptors;
 import android.support.annotation.NonNull;
 import android.support.annotation.RawRes;
 
-import com.yjnull.latte_core.util.FileUtil;
+import com.yjnull.latte_core.util.file.FileUtil;
 
 import java.io.IOException;
 
