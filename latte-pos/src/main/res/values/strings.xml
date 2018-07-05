@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">LattePOS</string>
+    <string name="pos_sign_up">注册</string>
+    <string name="pos_sign_up_name">姓名</string>
+    <string name="pos_sign_up_email">邮箱</string>
+    <string name="pos_sign_up_phone">手机号码</string>
+    <string name="pos_sign_up_psw">密码</string>
+    <string name="pos_sign_up_psw_again">重复密码</string>
+    <string name="pos_sign_up_login">已经注册了? 请登录</string>
 </resources>

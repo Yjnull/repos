@@ -25,6 +25,7 @@ public class LauncherScrollDelegate extends LatteDelegate implements OnItemClick
     private static final ArrayList<Integer> INTEGERS_IMG = new ArrayList<>();
 
     private void initBanner() {
+        INTEGERS_IMG.clear();
         INTEGERS_IMG.add(R.mipmap.launcher_01);
         INTEGERS_IMG.add(R.mipmap.launcher_02);
         INTEGERS_IMG.add(R.mipmap.launcher_03);
