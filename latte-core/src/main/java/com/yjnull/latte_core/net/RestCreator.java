@@ -2,6 +2,7 @@ package com.yjnull.latte_core.net;
 
 import com.yjnull.latte_core.app.ConfigKeys;
 import com.yjnull.latte_core.app.Latte;
+import com.yjnull.latte_core.net.rx.RxRestService;
 
 import java.util.ArrayList;
 import java.util.WeakHashMap;
@@ -61,6 +62,7 @@ public class RestCreator {
                 .baseUrl(BASE_URL)
                 .client(OKHttpHolder.OK_HTTP_CLIENT)
                 .addConverterFactory(ScalarsConverterFactory.create())
+                //.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
 
@@ -74,6 +76,18 @@ public class RestCreator {
 
     public static RestService getRestService() {
         return RestServiceHolder.REST_SERVICE;
+    }
+
+    /**
+     * Rx Service接口
+     */
+    private static final class RxRestServiceHolder {
+        private static final RxRestService REST_SERVICE =
+                RetrofitHolder.RETROFIT_CLIENT.create(RxRestService.class);
+    }
+
+    public static RxRestService getRxRestService() {
+        return RxRestServiceHolder.REST_SERVICE;
     }
 
 }
