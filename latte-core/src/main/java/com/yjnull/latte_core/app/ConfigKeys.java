@@ -10,5 +10,6 @@ public enum ConfigKeys {
     APPLICATION_CONTEXT,
     CONFIG_READY,
     ICON,
+    LOADER_DELAYED,
     INTERCEPTOR
 }

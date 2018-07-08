@@ -3,6 +3,8 @@ package com.yjnull.latte_core.net.callback;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 
+import com.yjnull.latte_core.app.ConfigKeys;
+import com.yjnull.latte_core.app.Latte;
 import com.yjnull.latte_core.ui.loader.LatteLoader;
 import com.yjnull.latte_core.ui.loader.LoaderStyle;
 
@@ -61,13 +63,14 @@ public class RequestCallbacks implements Callback<String> {
     }
 
     private void stopLoading() {
+        final long delayed = Latte.getConfiguration(ConfigKeys.LOADER_DELAYED);
         if (LOADER_STYLE != null) {
             HANDLER.postDelayed(new Runnable() {
                 @Override
                 public void run() {
                     LatteLoader.stopLoading();
                 }
-            }, 2000);
+            }, delayed);
         }
     }
 }

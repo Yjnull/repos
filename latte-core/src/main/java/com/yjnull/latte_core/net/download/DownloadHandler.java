@@ -21,7 +21,7 @@ import retrofit2.Response;
  */
 public class DownloadHandler {
 
-    private static final WeakHashMap<String, Object> PARAMS = RestCreator.getParams();
+    private final WeakHashMap<String, Object> PARAMS;
     private final String URL;
     private final IRequest REQUEST;
     private final String DOWNLOAD_DIR;
@@ -31,7 +31,8 @@ public class DownloadHandler {
     private final IFailure FAILURE;
     private final IError ERROR;
 
-    public DownloadHandler(String url,
+    public DownloadHandler(WeakHashMap<String, Object> params,
+                           String url,
                            IRequest request,
                            String downloadDir,
                            String extension,
@@ -39,6 +40,7 @@ public class DownloadHandler {
                            ISuccess success,
                            IFailure failure,
                            IError error) {
+        this.PARAMS = params;
         this.URL = url;
         this.REQUEST = request;
         this.DOWNLOAD_DIR = downloadDir;

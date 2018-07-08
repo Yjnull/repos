@@ -55,6 +55,10 @@ dependencies {
     api 'com.ToxicBakery.viewpager.transforms:view-pager-transforms:1.2.32@aar'
     //JSON
     api 'com.alibaba:fastjson:1.1.68.android'
+    //Log
+    api 'com.orhanobut:logger:2.2.0'
+    //DB
+    api 'org.greenrobot:greendao:3.2.2'
 
     //RxJava
     api 'io.reactivex.rxjava2:rxjava:2.1.16'

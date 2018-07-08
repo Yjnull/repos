@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 
 import com.yjnull.latte.pos.launcher.LauncherDelegate;
 import com.yjnull.latte.pos.launcher.LauncherScrollDelegate;
+import com.yjnull.latte.pos.sign.SignUpDelegate;
 import com.yjnull.latte_core.activities.ProxyActivity;
 import com.yjnull.latte_core.delegates.LatteDelegate;
 
@@ -22,6 +23,6 @@ public class ExampleActivity extends ProxyActivity {
 
     @Override
     public LatteDelegate setRootDelegate() {
-        return new LauncherDelegate();
+        return new SignUpDelegate();
     }
 }

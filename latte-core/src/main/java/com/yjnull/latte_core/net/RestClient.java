@@ -29,7 +29,7 @@ import retrofit2.Callback;
 public class RestClient {
 
     private final String URL;
-    private static final WeakHashMap<String, Object> PARAMS = RestCreator.getParams();
+    private final WeakHashMap<String, Object> PARAMS;
     private final IRequest REQUEST;
     private final String DOWNLOAD_DIR;
     private final String EXTENSION;   //文件下载后缀名
@@ -43,7 +43,7 @@ public class RestClient {
     private final Context CONTEXT;
 
     public RestClient(String url,
-                      Map<String, Object> params,
+                      WeakHashMap<String, Object> params,
                       String downloadDir,
                       String extension,
                       String name,
@@ -56,7 +56,7 @@ public class RestClient {
                       Context context,
                       LoaderStyle loaderStyle) {
         this.URL = url;
-        PARAMS.putAll(params);
+        this.PARAMS = params;
         this.REQUEST = request;
         this.DOWNLOAD_DIR = downloadDir;
         this.EXTENSION = extension;
@@ -167,7 +167,7 @@ public class RestClient {
     }
 
     public final void download() {
-        new DownloadHandler(URL, REQUEST, DOWNLOAD_DIR, EXTENSION, NAME, SUCCESS, FAILURE, ERROR)
+        new DownloadHandler(PARAMS, URL, REQUEST, DOWNLOAD_DIR, EXTENSION, NAME, SUCCESS, FAILURE, ERROR)
                 .handleDownload();
     }
 }

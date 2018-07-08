@@ -5,7 +5,6 @@ import com.yjnull.latte_core.app.Latte;
 import com.yjnull.latte_core.net.rx.RxRestService;
 
 import java.util.ArrayList;
-import java.util.WeakHashMap;
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.Interceptor;
@@ -23,13 +22,13 @@ public class RestCreator {
     /**
      * 参数容器
      */
-    private static final class ParamsHolder {
+    /*private static final class ParamsHolder {
         private static final WeakHashMap<String, Object> PARAMS = new WeakHashMap<>();
     }
 
     public static WeakHashMap<String, Object> getParams() {
         return ParamsHolder.PARAMS;
-    }
+    }*/
 
     /**
      * 构建OkHttp
