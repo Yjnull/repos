@@ -27,7 +27,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':latte-annotations')
+    api project(':latte-annotations')
     api 'com.android.support:appcompat-v7:27.1.1'
     api 'com.android.support:design:27.1.1'
     api 'com.android.support:support-v4:27.1.1'
@@ -58,8 +58,12 @@ dependencies {
     api 'com.orhanobut:logger:2.2.0'
     //DB
     api 'org.greenrobot:greendao:3.2.2'
+    //Wechat
+    //noinspection GradleDynamicVersion
+    api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+
     //调试
-    api 'com.facebook.stetho:stetho:1.5.0'
+    debugApi 'com.facebook.stetho:stetho:1.5.0'
     api 'com.facebook.stetho:stetho-okhttp3:1.5.0'
 
     //RxJava

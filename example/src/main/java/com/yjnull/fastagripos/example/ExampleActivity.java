@@ -9,6 +9,7 @@ import com.yjnull.latte.pos.launcher.LauncherDelegate;
 import com.yjnull.latte.pos.sign.ISignListener;
 import com.yjnull.latte.pos.sign.SignInDelegate;
 import com.yjnull.latte_core.activities.ProxyActivity;
+import com.yjnull.latte_core.app.Latte;
 import com.yjnull.latte_core.delegates.LatteDelegate;
 import com.yjnull.latte_core.ui.launcher.ILauncherListener;
 import com.yjnull.latte_core.ui.launcher.OnLauncherFinishTag;
@@ -24,6 +25,8 @@ public class ExampleActivity extends ProxyActivity implements
         if (actionBar != null) {
             actionBar.hide();
         }
+
+        Latte.getConfigurator().withActivity(this);
     }
 
     @Override
