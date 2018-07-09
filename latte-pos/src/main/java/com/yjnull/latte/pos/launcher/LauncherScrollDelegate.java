@@ -1,5 +1,6 @@
 package com.yjnull.latte.pos.launcher;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -7,9 +8,13 @@ import android.view.View;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.yjnull.latte.pos.R;
+import com.yjnull.latte_core.app.AccountManager;
+import com.yjnull.latte_core.app.IUserChecker;
 import com.yjnull.latte_core.app.Latte;
 import com.yjnull.latte_core.delegates.LatteDelegate;
+import com.yjnull.latte_core.ui.launcher.ILauncherListener;
 import com.yjnull.latte_core.ui.launcher.LauncherHolderCreator;
+import com.yjnull.latte_core.ui.launcher.OnLauncherFinishTag;
 import com.yjnull.latte_core.ui.launcher.ScrollLauncherTag;
 import com.yjnull.latte_core.util.storage.LattePreference;
 
@@ -23,6 +28,7 @@ public class LauncherScrollDelegate extends LatteDelegate implements OnItemClick
 
     private ConvenientBanner<Integer> mConvenientBanner = null;
     private static final ArrayList<Integer> INTEGERS_IMG = new ArrayList<>();
+    private ILauncherListener mILauncherListener = null;
 
     private void initBanner() {
         INTEGERS_IMG.clear();
@@ -42,6 +48,14 @@ public class LauncherScrollDelegate extends LatteDelegate implements OnItemClick
     }
 
     @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof ILauncherListener) {
+            mILauncherListener = (ILauncherListener) activity;
+        }
+    }
+
+    @Override
     public Object setLayout() {
         mConvenientBanner = new ConvenientBanner<>(getContext());
         return mConvenientBanner;
@@ -57,7 +71,22 @@ public class LauncherScrollDelegate extends LatteDelegate implements OnItemClick
         //如果点击的是最后一个
         if (position == INTEGERS_IMG.size() - 1) {
             LattePreference.setAppFlag(ScrollLauncherTag.HAS_FIRST_LAUNCHER_APP.name(), true);
-            //TODO check 用户是否已经登录,暂未处理
+            //check 用户是否已经登录
+            AccountManager.checkAccount(new IUserChecker() {
+                @Override
+                public void onSignIn() {
+                    if (mILauncherListener != null) {
+                        mILauncherListener.onLauncherFinish(OnLauncherFinishTag.SIGNED);
+                    }
+                }
+
+                @Override
+                public void onNotSignIn() {
+                    if (mILauncherListener != null) {
+                        mILauncherListener.onLauncherFinish(OnLauncherFinishTag.NOT_SIGNED);
+                    }
+                }
+            });
         }
     }
 }

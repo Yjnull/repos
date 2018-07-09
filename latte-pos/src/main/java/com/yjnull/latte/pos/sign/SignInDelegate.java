@@ -1,15 +1,21 @@
 package com.yjnull.latte.pos.sign;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Toast;
 
 import com.yjnull.latte.pos.R;
 import com.yjnull.latte.pos.R2;
 import com.yjnull.latte_core.delegates.LatteDelegate;
+import com.yjnull.latte_core.net.RestClient;
+import com.yjnull.latte_core.net.callback.IError;
+import com.yjnull.latte_core.net.callback.ISuccess;
+import com.yjnull.latte_core.util.log.LatteLogger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -21,15 +27,44 @@ import butterknife.OnClick;
 
 public class SignInDelegate extends LatteDelegate {
 
-    @BindView(R2.id.edit_sign_in_email)
-    TextInputEditText mEmail = null;
+    @BindView(R2.id.edit_sign_in_name)
+    TextInputEditText mName = null;
     @BindView(R2.id.edit_sign_in_password)
     TextInputEditText mPassword = null;
+
+    private ISignListener mISignListener = null;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        if (activity instanceof ISignListener) {
+            mISignListener = (ISignListener) activity;
+        }
+    }
 
     @OnClick(R2.id.btn_sign_in)
     void onClickSignIn() {
         if (checkForm()) {
-
+            RestClient.builder()
+                    .url("http://www.wanandroid.com/user/login")
+                    .params("username", mName.getText().toString())
+                    .params("password", mPassword.getText().toString())
+                    .success(new ISuccess() {
+                        @Override
+                        public void onSuccess(String response) {
+                            LatteLogger.json("USER_PROFILE", response);
+                            SignHandler.onSignIn(response, mISignListener);
+                        }
+                    })
+                    .error(new IError() {
+                        @Override
+                        public void onError(int code, String msg) {
+                            Toast.makeText(getContext(), code + msg, Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .loader(getContext())
+                    .build()
+                    .post();
         }
     }
 
@@ -44,15 +79,15 @@ public class SignInDelegate extends LatteDelegate {
     }
 
     private boolean checkForm() {
-        final String email = mEmail.getText().toString();
+        final String email = mName.getText().toString();
         final String password = mPassword.getText().toString();
 
         boolean isPass = true;
 
-        if (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            mEmail.setError("错误的邮箱格式");
+        if (TextUtils.isEmpty(email)) {
+            mName.setError("用户名不能为空");
             isPass = false;
-        } else mEmail.setError(null);
+        } else mName.setError(null);
 
         if (TextUtils.isEmpty(password) || password.length() < 6) {
             mPassword.setError("请填写至少6位数密码");

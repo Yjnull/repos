@@ -1,5 +1,6 @@
 package com.yjnull.latte_core.net;
 
+import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.yjnull.latte_core.app.ConfigKeys;
 import com.yjnull.latte_core.app.Latte;
 import com.yjnull.latte_core.net.rx.RxRestService;
@@ -49,6 +50,7 @@ public class RestCreator {
 
         private static final OkHttpClient OK_HTTP_CLIENT = addInterceptor()
                 .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
+                .addNetworkInterceptor(new StethoInterceptor())
                 .build();
     }
 
