@@ -28,41 +28,4 @@ public class ExampleDelegate extends LatteDelegate {
         //testRestClient();
     }
 
-    private void testRestClient() {
-        RestClient.builder()
-                .url("/index")
-                .loader(getContext())
-                .success(new ISuccess() {
-                    @Override
-                    public void onSuccess(String response) {
-                        //Toast.makeText(getContext(), response, Toast.LENGTH_LONG).show();
-                        Log.d("respose:--->", response);
-                    }
-                })
-                .failure(new IFailure() {
-                    @Override
-                    public void onFailure() {
-
-                    }
-                })
-                .error(new IError() {
-                    @Override
-                    public void onError(int code, String msg) {
-
-                    }
-                })
-                .onRequest(new IRequest() {
-                    @Override
-                    public void onRequestStart() {
-
-                    }
-
-                    @Override
-                    public void onRequestEnd() {
-
-                    }
-                })
-                .build()
-                .get();
-    }
 }

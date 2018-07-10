@@ -12,4 +12,9 @@
     <string name="pos_sign_in">登录</string>
     <string name="pos_sign_in_up">还没有账户？现在注册吧</string>
     <string name="pos_sign_in_fa_weixin">{fa-weixin}</string>
+
+    <!--主页-->
+    <string name="index_scan">{icon-scan}</string>
+    <string name="index_message">{icon-bullhorn}</string>
+    <string name="index_search">搜索</string>
 </resources>
