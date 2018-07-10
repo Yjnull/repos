@@ -48,7 +48,7 @@ public class SignInDelegate extends LatteDelegate {
     void onClickSignIn() {
         if (checkForm()) {
             RestClient.builder()
-                    .url("http://www.wanandroid.com/user/login")
+                    .url("user/login")
                     .params("username", mName.getText().toString())
                     .params("password", mPassword.getText().toString())
                     .success(new ISuccess() {

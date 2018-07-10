@@ -1,8 +1,11 @@
 package com.yjnull.latte_core.ui.refresh;
 
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.widget.Toast;
 
 import com.yjnull.latte_core.app.Latte;
+import com.yjnull.latte_core.net.RestClient;
+import com.yjnull.latte_core.net.callback.ISuccess;
 
 /**
  * Created by Yangya on 2018/7/10
@@ -24,6 +27,19 @@ public class RefreshHandler implements SwipeRefreshLayout.OnRefreshListener {
                 REFRESH_LAYOUT.setRefreshing(false);
             }
         }, 2000);
+    }
+
+    public void firstPage(String url) {
+        RestClient.builder()
+                .url(url)
+                .success(new ISuccess() {
+                    @Override
+                    public void onSuccess(String response) {
+                        Toast.makeText(Latte.getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                    }
+                })
+                .build()
+                .get();
     }
 
     @Override

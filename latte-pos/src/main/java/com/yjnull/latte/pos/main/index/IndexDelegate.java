@@ -58,6 +58,7 @@ public class IndexDelegate extends BottomItemDelegate {
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
         initRefreshLayout();
+        mRefreshHandler.firstPage("article/list/0/json");
     }
 
     @Override

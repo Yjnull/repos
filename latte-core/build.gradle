@@ -61,6 +61,8 @@ dependencies {
     //Wechat
     //noinspection GradleDynamicVersion
     api 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    //RecyclerView依赖
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40'
 
     //调试
     debugApi 'com.facebook.stetho:stetho:1.5.0'
