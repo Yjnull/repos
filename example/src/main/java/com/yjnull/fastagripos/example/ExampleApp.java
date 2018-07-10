@@ -20,7 +20,7 @@ public class ExampleApp extends Application {
         Latte.init(this)
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new FontECModule())
-                .withLoaderDelayed(1000)
+                .withLoaderDelayed(100)
                 .withApiHost("http://127.0.0.1/")
                 .withInterceptor(new DebugInterceptor("index", R.raw.test))
                 .withWeChatAppId("")

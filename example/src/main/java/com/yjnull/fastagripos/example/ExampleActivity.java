@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.widget.Toast;
 
 import com.yjnull.latte.pos.launcher.LauncherDelegate;
+import com.yjnull.latte.pos.main.PosBottomDelegate;
 import com.yjnull.latte.pos.sign.ISignListener;
 import com.yjnull.latte.pos.sign.SignInDelegate;
 import com.yjnull.latte_core.activities.ProxyActivity;
@@ -36,8 +37,8 @@ public class ExampleActivity extends ProxyActivity implements
 
     @Override
     public void onSignInSuccess() {
-        Toast.makeText(this, "Login成功", Toast.LENGTH_LONG).show();
-        startWithPop(new ExampleDelegate());
+        Toast.makeText(this, "登录成功", Toast.LENGTH_LONG).show();
+        startWithPop(new PosBottomDelegate());
     }
 
     @Override
@@ -51,8 +52,8 @@ public class ExampleActivity extends ProxyActivity implements
         switch (tag) {
             case SIGNED:
                 //用户已经登录,进主页
-                Toast.makeText(this, "launcher success USER LOGINED!", Toast.LENGTH_LONG).show();
-                startWithPop(new ExampleDelegate());
+                //Toast.makeText(this, "launcher success USER LOGINED!", Toast.LENGTH_LONG).show();
+                startWithPop(new PosBottomDelegate());
                 break;
             case NOT_SIGNED:
                 //用户未登录,进登录页面
