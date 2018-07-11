@@ -15,6 +15,6 @@
 
     <!--主页-->
     <string name="index_scan">{icon-scan}</string>
-    <string name="index_message">{icon-bullhorn}</string>
+    <string name="index_message">{fa-bullhorn}</string>
     <string name="index_search">搜索</string>
 </resources>

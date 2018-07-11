@@ -1,3 +1,91 @@
 {
-  "key":"value"
+  "code": 0,
+  "message": "OK",
+  "total": 100,
+  "page_size": 6,
+  "data": [
+    {
+      "goodsId":0,
+      "spanSize":4,
+      "banners": [
+        "http://www.wanandroid.com/blogimgs/50c115c2-cf6c-4802-aa7b-a4334de444cd.png",
+        "http://www.wanandroid.com/blogimgs/ffb61454-e0d2-46e7-bc9b-4f359061ae20.png",
+        "http://www.wanandroid.com/blogimgs/55cce80e-eb50-4f9f-8141-ae304c63d7ff.png"
+      ]
+    },
+    {
+      "goodsId":1,
+      "text": "送你一个暖心的Mock API工具",
+      "imageUrl": "http://www.wanandroid.com/blogimgs/fb0ea461-e00a-482b-814f-4faca5761427.png",
+      "spanSize":4
+    },
+    {
+      "goodsId":2,
+      "text": "加个友情链接吧",
+      "imageUrl": "http://www.wanandroid.com/blogimgs/84810df6-adf1-45bc-b3e2-294fa4e95005.png",
+      "spanSize":2
+    },
+    {
+      "goodsId":3,
+      "text": "JSON工具",
+      "imageUrl": "http://www.wanandroid.com/blogimgs/90cf8c40-9489-4f9d-8936-02c9ebae31f0.png",
+      "spanSize":2
+    },
+    {
+      "goodsId":4,
+      "imageUrl": "http://www.wanandroid.com/blogimgs/acc23063-1884-4925-bdf8-0b0364a7243e.png",
+      "spanSize":2
+    },
+    {
+      "goodsId":5,
+      "imageUrl": "http://www.wanandroid.com/blogimgs/62c1bd68-b5f3-4a3c-a649-7ca8c7dfabe6.png",
+      "spanSize":2
+    },
+    {
+      "goodsId":4,
+      "imageUrl": "http://www.wanandroid.com/blogimgs/acc23063-1884-4925-bdf8-0b0364a7243e.png",
+      "spanSize":2
+    },
+    {
+      "goodsId":5,
+      "imageUrl": "http://www.wanandroid.com/blogimgs/62c1bd68-b5f3-4a3c-a649-7ca8c7dfabe6.png",
+      "spanSize":2
+    },
+    {
+      "goodsId":4,
+      "imageUrl": "https://i1.mifile.cn/a4/xmad_15299774887546_atPHd.jpg",
+      "spanSize":4
+    },
+    {
+      "goodsId":5,
+      "text": "我是野广告",
+      "spanSize":4
+    },
+    {
+      "goodsId":2,
+      "text": "加个友情链接吧",
+      "imageUrl": "http://www.wanandroid.com/blogimgs/84810df6-adf1-45bc-b3e2-294fa4e95005.png",
+      "spanSize":2
+    },
+    {
+      "goodsId":3,
+      "text": "JSON工具",
+      "imageUrl": "http://www.wanandroid.com/blogimgs/90cf8c40-9489-4f9d-8936-02c9ebae31f0.png",
+      "spanSize":2
+    },
+    {
+      "goodsId":4,
+      "imageUrl": "http://www.wanandroid.com/blogimgs/acc23063-1884-4925-bdf8-0b0364a7243e.png",
+      "spanSize":2
+    },
+    {
+      "goodsId":5,
+      "imageUrl": "http://www.wanandroid.com/blogimgs/62c1bd68-b5f3-4a3c-a649-7ca8c7dfabe6.png",
+      "spanSize":2
+    }
+  ]
 }
+
+
+
+
