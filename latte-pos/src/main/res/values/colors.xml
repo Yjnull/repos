@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="app_background">#1111</color>
+    <color name="app_background">#e5e5e5</color>
+    <color name="we_chat_black">#323232</color>
+    <color name="item_background">#F1F1F1</color>
+    <color name="app_line_background">#c9c9c9</color>
+    <color name="app_main">@android:color/holo_orange_dark</color>
+
 </resources>

@@ -17,4 +17,6 @@
     <string name="index_scan">{icon-scan}</string>
     <string name="index_message">{fa-bullhorn}</string>
     <string name="index_search">搜索</string>
+    <!--分类-->
+    <string name="sort_bar_text">分类</string>
 </resources>

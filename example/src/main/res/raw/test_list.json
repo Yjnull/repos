@@ -1,0 +1,135 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": [
+    {
+      "id":1,
+      "section": "标题1",
+      "goods": [
+        {
+          "goods_id":3,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/fb0ea461-e00a-482b-814f-4faca5761427.png",
+          "goods_name": "匹配1"
+        },
+        {
+          "goods_id":4,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/b38258d1-fa8c-49ca-836b-41585eea1011.png",
+          "goods_name": "匹配2"
+        },
+        {
+          "goods_id":5,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/83deef31-43ee-4400-8847-17209ced5d8a.png",
+          "goods_name": "匹配3"
+        },
+        {
+          "goods_id":6,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/9126e0d5-13e2-4355-a4bb-15a0fa761c08.png",
+          "goods_name": "匹配4"
+        }
+      ]
+    },
+    {
+      "id":2,
+      "section": "标题2",
+      "goods": [
+        {
+          "goods_id":3,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/c2e6e106-e2f5-4f45-b89c-f6124d16e5e5.png",
+          "goods_name": "匹配1"
+        },
+        {
+          "goods_id":4,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/b38258d1-fa8c-49ca-836b-41585eea1011.png",
+          "goods_name": "匹配2"
+        },
+        {
+          "goods_id":5,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/83deef31-43ee-4400-8847-17209ced5d8a.png",
+          "goods_name": "匹配3"
+        },
+        {
+          "goods_id":6,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/9126e0d5-13e2-4355-a4bb-15a0fa761c08.png",
+          "goods_name": "匹配4"
+        }
+      ]
+    },
+    {
+      "id":3,
+      "section": "标题3",
+      "goods": [
+        {
+          "goods_id":3,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/c2e6e106-e2f5-4f45-b89c-f6124d16e5e5.png",
+          "goods_name": "匹配1"
+        },
+        {
+          "goods_id":4,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/b38258d1-fa8c-49ca-836b-41585eea1011.png",
+          "goods_name": "匹配2"
+        }
+      ]
+    },
+    {
+      "id":3,
+      "section": "标题3",
+      "goods": [
+        {
+          "goods_id":3,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/c2e6e106-e2f5-4f45-b89c-f6124d16e5e5.png",
+          "goods_name": "匹配1"
+        },
+        {
+          "goods_id":4,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/b38258d1-fa8c-49ca-836b-41585eea1011.png",
+          "goods_name": "匹配2"
+        },
+        {
+          "goods_id":5,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/83deef31-43ee-4400-8847-17209ced5d8a.png",
+          "goods_name": "匹配3"
+        }
+      ]
+    },
+    {
+      "id":4,
+      "section": "标题4",
+      "goods": [
+        {
+          "goods_id":3,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/c2e6e106-e2f5-4f45-b89c-f6124d16e5e5.png",
+          "goods_name": "匹配1"
+        },
+        {
+          "goods_id":4,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/b38258d1-fa8c-49ca-836b-41585eea1011.png",
+          "goods_name": "匹配2"
+        },
+        {
+          "goods_id":5,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/83deef31-43ee-4400-8847-17209ced5d8a.png",
+          "goods_name": "匹配3"
+        },
+        {
+          "goods_id":6,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/9126e0d5-13e2-4355-a4bb-15a0fa761c08.png",
+          "goods_name": "匹配4"
+        },
+        {
+          "goods_id":5,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/83deef31-43ee-4400-8847-17209ced5d8a.png",
+          "goods_name": "匹配5"
+        },
+        {
+          "goods_id":6,
+          "goods_thumb": "http://www.wanandroid.com/blogimgs/9126e0d5-13e2-4355-a4bb-15a0fa761c08.png",
+          "goods_name": "匹配6"
+        }
+      ]
+    }
+  ]
+}
+
+
+
+

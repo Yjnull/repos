@@ -64,7 +64,7 @@ public class IndexDelegate extends BottomItemDelegate {
         mRecyclerView.setLayoutManager(manager);
         if (getContext() != null)
             mRecyclerView.addItemDecoration
-                (BaseDecoration.create(ContextCompat.getColor(getContext(), R.color.app_background), 20));
+                (BaseDecoration.create(ContextCompat.getColor(getContext(), R.color.app_background), 5));
 
         final PosBottomDelegate posBottomDelegate = getParentDelegate();
         mRecyclerView.addOnItemTouchListener(IndexItemClickListener.create(posBottomDelegate));

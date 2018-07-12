@@ -22,7 +22,7 @@ public class ExampleApp extends Application {
                 .withIcon(new FontECModule())
                 .withLoaderDelayed(100)
                 .withApiHost("http://www.wanandroid.com/")
-                .withInterceptor(new DebugInterceptor("test", R.raw.test))
+                .withInterceptor(new DebugInterceptor("test_list", R.raw.test_list))
                 .withWeChatAppId("")
                 .withWeChatAppSecret("")
                 .configure();
