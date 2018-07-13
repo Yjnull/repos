@@ -2,11 +2,14 @@ package com.yjnull.latte_core.app;
 
 import android.app.Activity;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 
 import com.joanzapata.iconify.IconFontDescriptor;
 import com.joanzapata.iconify.Iconify;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
+import com.yjnull.latte_core.delegates.web.event.Event;
+import com.yjnull.latte_core.delegates.web.event.EventManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -97,6 +100,17 @@ public class Configurator {
 
     public final Configurator withActivity(Activity activity) {
         LATTE_CONFIGS.put(ConfigKeys.ACTIVITY, activity);
+        return this;
+    }
+
+    public Configurator withJavascriptInterface(@NonNull String name) {
+        LATTE_CONFIGS.put(ConfigKeys.JAVASCRIPT_INTERFACE, name);
+        return this;
+    }
+
+    public Configurator withWebEvent(@NonNull String name, @NonNull Event event) {
+        final EventManager manager = EventManager.getInstance();
+        manager.addEvent(name, event);
         return this;
     }
 

@@ -7,6 +7,7 @@ import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.yjnull.latte.pos.database.DatabaseManager;
 import com.yjnull.latte.pos.icon.FontECModule;
 import com.yjnull.latte_core.app.Latte;
+import com.yjnull.fastagripos.example.event.TestEvent;
 import com.yjnull.latte_core.net.interceptors.DebugInterceptor;
 
 /**
@@ -25,6 +26,8 @@ public class ExampleApp extends Application {
                 .withInterceptor(new DebugInterceptor("test_list", R.raw.test_list))
                 .withWeChatAppId("")
                 .withWeChatAppSecret("")
+                .withJavascriptInterface("latte")
+                .withWebEvent("share", new TestEvent())
                 .configure();
         initStetho();
         DatabaseManager.getInstance().init(this);
