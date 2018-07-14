@@ -28,6 +28,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':latte-core')
+    api project(':latte-ui')
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 }

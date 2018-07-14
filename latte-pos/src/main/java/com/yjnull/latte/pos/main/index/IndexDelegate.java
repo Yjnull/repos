@@ -14,9 +14,9 @@ import com.joanzapata.iconify.widget.IconTextView;
 import com.yjnull.latte.pos.R;
 import com.yjnull.latte.pos.R2;
 import com.yjnull.latte.pos.main.PosBottomDelegate;
+import com.yjnull.latte.ui.recycler.BaseDecoration;
+import com.yjnull.latte.ui.refresh.RefreshHandler;
 import com.yjnull.latte_core.delegates.bottom.BottomItemDelegate;
-import com.yjnull.latte_core.ui.recycler.BaseDecoration;
-import com.yjnull.latte_core.ui.refresh.RefreshHandler;
 
 import butterknife.BindView;
 import butterknife.OnClick;

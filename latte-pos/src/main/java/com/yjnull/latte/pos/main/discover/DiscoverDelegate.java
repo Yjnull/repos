@@ -30,7 +30,7 @@ public class DiscoverDelegate extends BottomItemDelegate {
         //final WebDelegateImpl delegate = WebDelegateImpl.create("http://www.wanandroid.com/blog/show/2219");
         final WebDelegateImpl delegate = WebDelegateImpl.create("index.html");
         delegate.setTopDelegate(this.getParentDelegate());
-        loadRootFragment(R.id.web_discovery_container, delegate);
+        getSupportDelegate().loadRootFragment(R.id.web_discovery_container, delegate);
     }
 
     @Override

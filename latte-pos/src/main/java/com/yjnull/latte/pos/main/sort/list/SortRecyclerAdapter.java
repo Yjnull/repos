@@ -8,14 +8,16 @@ import android.view.View;
 import com.yjnull.latte.pos.R;
 import com.yjnull.latte.pos.main.sort.SortDelegate;
 import com.yjnull.latte.pos.main.sort.content.ContentDelegate;
+import com.yjnull.latte.ui.recycler.ItemType;
+import com.yjnull.latte.ui.recycler.MultipleFields;
+import com.yjnull.latte.ui.recycler.MultipleItemEntity;
+import com.yjnull.latte.ui.recycler.MultipleRecyclerAdapter;
+import com.yjnull.latte.ui.recycler.MultipleViewHolder;
 import com.yjnull.latte_core.delegates.LatteDelegate;
-import com.yjnull.latte_core.ui.recycler.ItemType;
-import com.yjnull.latte_core.ui.recycler.MultipleFields;
-import com.yjnull.latte_core.ui.recycler.MultipleItemEntity;
-import com.yjnull.latte_core.ui.recycler.MultipleRecyclerAdapter;
-import com.yjnull.latte_core.ui.recycler.MultipleViewHolder;
 
 import java.util.List;
+
+import me.yokeyword.fragmentation.SupportHelper;
 
 /**
  * Created by Yangya on 2018/7/12
@@ -86,9 +88,10 @@ public class SortRecyclerAdapter extends MultipleRecyclerAdapter {
     }
 
     private void switchContent(ContentDelegate delegate) {
-        final LatteDelegate contentDelegate = DELEGATE.findChildFragment(ContentDelegate.class);
+        final LatteDelegate contentDelegate =
+                SupportHelper.findFragment(DELEGATE.getChildFragmentManager(), ContentDelegate.class);
         if (contentDelegate != null) {
-            contentDelegate.replaceFragment(delegate, false);
+            contentDelegate.getSupportDelegate().replaceFragment(delegate, false);
         }
     }
 

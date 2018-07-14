@@ -9,10 +9,10 @@ import android.view.View;
 import com.yjnull.latte.pos.R;
 import com.yjnull.latte.pos.R2;
 import com.yjnull.latte.pos.main.sort.SortDelegate;
+import com.yjnull.latte.ui.recycler.MultipleItemEntity;
 import com.yjnull.latte_core.delegates.LatteDelegate;
 import com.yjnull.latte_core.net.RestClient;
 import com.yjnull.latte_core.net.callback.ISuccess;
-import com.yjnull.latte_core.ui.recycler.MultipleItemEntity;
 
 import java.util.List;
 

@@ -1,0 +1,34 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": [
+    {
+      "id":1,
+      "price":2.99,
+      "count":2,
+      "title": "商品标题1",
+      "desc":  "商品详细描述1",
+      "thumb": "http://www.wanandroid.com/blogimgs/acd85350-9b4f-426a-a14c-bbc0cb0967a0.png"
+    },
+    {
+      "id":2,
+      "price":4.0,
+      "count":3,
+      "title": "商品标题2",
+      "desc":  "商品详细描述2",
+      "thumb": "http://www.wanandroid.com/blogimgs/b38258d1-fa8c-49ca-836b-41585eea1011.png"
+    },
+    {
+      "id":3,
+      "price":6.6,
+      "count":6,
+      "title": "商品标题3",
+      "desc":  "商品详细描述3",
+      "thumb": "http://www.wanandroid.com/blogimgs/b38258d1-fa8c-49ca-836b-41585eea1011.png"
+    }
+  ]
+}
+
+
+
+

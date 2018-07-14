@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.yjnull.latte.pos.R;
-import com.yjnull.latte_core.ui.recycler.RgbValue;
+import com.yjnull.latte.ui.recycler.RgbValue;
 
 /**
  * Created by Yangya on 2018/7/11

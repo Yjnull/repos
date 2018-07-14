@@ -3,17 +3,17 @@ package com.yjnull.latte.pos.main.index;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.yjnull.latte_core.ui.recycler.DataConverter;
-import com.yjnull.latte_core.ui.recycler.ItemType;
-import com.yjnull.latte_core.ui.recycler.MultipleFields;
-import com.yjnull.latte_core.ui.recycler.MultipleItemEntity;
+import com.yjnull.latte.ui.recycler.DataConverter;
+import com.yjnull.latte.ui.recycler.ItemType;
+import com.yjnull.latte.ui.recycler.MultipleFields;
+import com.yjnull.latte.ui.recycler.MultipleItemEntity;
 
 import java.util.ArrayList;
 
 /**
  * Created by Yangya on 2018/7/11
  */
-public final class IndexDataConverter extends DataConverter{
+public final class IndexDataConverter extends DataConverter {
     @Override
     public ArrayList<MultipleItemEntity> convert() {
         final JSONArray dataArray = JSON.parseObject(getJsonData()).getJSONArray("data");

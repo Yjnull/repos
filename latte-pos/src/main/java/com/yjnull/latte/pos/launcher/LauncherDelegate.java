@@ -1,6 +1,6 @@
 package com.yjnull.latte.pos.launcher;
 
-import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
@@ -8,12 +8,12 @@ import android.view.View;
 
 import com.yjnull.latte.pos.R;
 import com.yjnull.latte.pos.R2;
+import com.yjnull.latte.ui.launcher.ILauncherListener;
+import com.yjnull.latte.ui.launcher.OnLauncherFinishTag;
+import com.yjnull.latte.ui.launcher.ScrollLauncherTag;
 import com.yjnull.latte_core.app.AccountManager;
 import com.yjnull.latte_core.app.IUserChecker;
 import com.yjnull.latte_core.delegates.LatteDelegate;
-import com.yjnull.latte_core.ui.launcher.ILauncherListener;
-import com.yjnull.latte_core.ui.launcher.OnLauncherFinishTag;
-import com.yjnull.latte_core.ui.launcher.ScrollLauncherTag;
 import com.yjnull.latte_core.util.storage.LattePreference;
 import com.yjnull.latte_core.util.timer.BaseTimerTask;
 import com.yjnull.latte_core.util.timer.ITimerListener;
@@ -54,10 +54,10 @@ public class LauncherDelegate extends LatteDelegate implements ITimerListener{
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        if (activity instanceof ILauncherListener) {
-            mILauncherListener = (ILauncherListener) activity;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof ILauncherListener) {
+            mILauncherListener = (ILauncherListener) context;
         }
     }
 
@@ -74,7 +74,7 @@ public class LauncherDelegate extends LatteDelegate implements ITimerListener{
     //判断是否显示滑动启动页
     private void checkIsShowScroll() {
         if (!LattePreference.getAppFlag(ScrollLauncherTag.HAS_FIRST_LAUNCHER_APP.name())) {
-            startWithPop(new LauncherScrollDelegate());
+            getSupportDelegate().startWithPop(new LauncherScrollDelegate());
         } else {
             //检查用户是否登录了App
             AccountManager.checkAccount(new IUserChecker() {

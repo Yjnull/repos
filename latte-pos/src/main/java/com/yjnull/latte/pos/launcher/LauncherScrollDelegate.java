@@ -1,6 +1,6 @@
 package com.yjnull.latte.pos.launcher;
 
-import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -8,14 +8,13 @@ import android.view.View;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.yjnull.latte.pos.R;
+import com.yjnull.latte.ui.launcher.ILauncherListener;
+import com.yjnull.latte.ui.launcher.LauncherHolderCreator;
+import com.yjnull.latte.ui.launcher.OnLauncherFinishTag;
+import com.yjnull.latte.ui.launcher.ScrollLauncherTag;
 import com.yjnull.latte_core.app.AccountManager;
 import com.yjnull.latte_core.app.IUserChecker;
-import com.yjnull.latte_core.app.Latte;
 import com.yjnull.latte_core.delegates.LatteDelegate;
-import com.yjnull.latte_core.ui.launcher.ILauncherListener;
-import com.yjnull.latte_core.ui.launcher.LauncherHolderCreator;
-import com.yjnull.latte_core.ui.launcher.OnLauncherFinishTag;
-import com.yjnull.latte_core.ui.launcher.ScrollLauncherTag;
 import com.yjnull.latte_core.util.storage.LattePreference;
 
 import java.util.ArrayList;
@@ -48,7 +47,7 @@ public class LauncherScrollDelegate extends LatteDelegate implements OnItemClick
     }
 
     @Override
-    public void onAttach(Activity activity) {
+    public void onAttach(Context activity) {
         super.onAttach(activity);
         if (activity instanceof ILauncherListener) {
             mILauncherListener = (ILauncherListener) activity;

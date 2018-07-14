@@ -9,17 +9,17 @@ import com.yjnull.latte.pos.launcher.LauncherDelegate;
 import com.yjnull.latte.pos.main.PosBottomDelegate;
 import com.yjnull.latte.pos.sign.ISignListener;
 import com.yjnull.latte.pos.sign.SignInDelegate;
+import com.yjnull.latte.ui.launcher.ILauncherListener;
+import com.yjnull.latte.ui.launcher.OnLauncherFinishTag;
 import com.yjnull.latte_core.activities.ProxyActivity;
 import com.yjnull.latte_core.app.Latte;
 import com.yjnull.latte_core.delegates.LatteDelegate;
-import com.yjnull.latte_core.ui.launcher.ILauncherListener;
-import com.yjnull.latte_core.ui.launcher.OnLauncherFinishTag;
 
 import qiu.niorgai.StatusBarCompat;
 
 public class ExampleActivity extends ProxyActivity implements
         ISignListener,
-        ILauncherListener{
+        ILauncherListener {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,13 +41,13 @@ public class ExampleActivity extends ProxyActivity implements
     @Override
     public void onSignInSuccess() {
         Toast.makeText(this, "登录成功", Toast.LENGTH_LONG).show();
-        startWithPop(new PosBottomDelegate());
+        getSupportDelegate().startWithPop(new PosBottomDelegate());
     }
 
     @Override
     public void onSignUpSuccess() {
         Toast.makeText(this, "注册成功", Toast.LENGTH_LONG).show();
-        startWithPop(new ExampleDelegate());
+        getSupportDelegate().startWithPop(new ExampleDelegate());
     }
 
     @Override
@@ -56,12 +56,12 @@ public class ExampleActivity extends ProxyActivity implements
             case SIGNED:
                 //用户已经登录,进主页
                 //Toast.makeText(this, "launcher success USER LOGINED!", Toast.LENGTH_LONG).show();
-                startWithPop(new PosBottomDelegate());
+                getSupportDelegate().startWithPop(new PosBottomDelegate());
                 break;
             case NOT_SIGNED:
                 //用户未登录,进登录页面
                 Toast.makeText(this, "launcher success USER UN_LOGINED!", Toast.LENGTH_LONG).show();
-                startWithPop(new SignInDelegate());
+                getSupportDelegate().startWithPop(new SignInDelegate());
                 break;
             default:
                 break;
