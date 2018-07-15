@@ -30,4 +30,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':latte-ui')
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    //圆形图片
+    api 'de.hdodenhof:circleimageview:2.2.0'
 }

@@ -28,13 +28,15 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':latte-annotations')
+    testImplementation 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    ////Android Support包
     api 'com.android.support:appcompat-v7:27.1.1'
     api 'com.android.support:design:27.1.1'
     api 'com.android.support:support-v4:27.1.1'
     api 'com.android.support.constraint:constraint-layout:1.1.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //字体图标
     api 'com.joanzapata.iconify:android-iconify-ionicons:2.2.2'
     api 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2'
@@ -62,6 +64,15 @@ dependencies {
     api ('com.github.niorgai:StatusBarCompat:2.1.4', {
         exclude group: 'com.android.support'
     })
+    //工具包
+    api 'com.blankj:utilcode:1.17.3'
+    //动态权限处理
+    api ("com.github.hotchemi:permissionsdispatcher:3.3.1"){
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:3.3.1"
+    //图片剪裁
+    api 'com.github.yalantis:ucrop:2.2.2-native'
 
     //调试
     debugApi 'com.facebook.stetho:stetho:1.5.0'
