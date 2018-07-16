@@ -46,7 +46,7 @@ public class ListAdapter extends BaseMultiItemQuickAdapter<ListBean, BaseViewHol
                 helper.setText(R.id.tv_arrow_switch_text,item.getText());
                 final SwitchCompat switchCompat = helper.getView(R.id.list_item_switch);
                 switchCompat.setChecked(true);
-                switchCompat.setOnCheckedChangeListener(item.getmOnCheckedChangeListener());
+                switchCompat.setOnCheckedChangeListener(item.getOnCheckedChangeListener());
                 break;
             default:
                 break;

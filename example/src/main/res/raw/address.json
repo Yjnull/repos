@@ -1,0 +1,31 @@
+{
+  "code": 0,
+  "message": "OK",
+  "data": [
+    {
+      "id":1,
+      "default":true,
+      "name": "商品标题1",
+      "phone":  "123455232",
+      "address": "天钥桥路323方式洛夫卡就是"
+    },
+    {
+      "id":2,
+      "default":false,
+      "name": "商品标题2",
+      "phone":  "1234324332",
+      "address": "天钥桥路323方式洛夫34234就是"
+    },
+    {
+      "id":3,
+      "default":false,
+      "name": "商品标题3",
+      "phone":  "123466662",
+      "address": "天钥桥路323方式4324234卡就是"
+    }
+  ]
+}
+
+
+
+

@@ -8,11 +8,13 @@ import android.view.View;
 
 import com.yjnull.latte.pos.R;
 import com.yjnull.latte.pos.R2;
+import com.yjnull.latte.pos.main.personal.address.AddressDelegate;
 import com.yjnull.latte.pos.main.personal.list.ListAdapter;
 import com.yjnull.latte.pos.main.personal.list.ListBean;
 import com.yjnull.latte.pos.main.personal.list.ListItemType;
 import com.yjnull.latte.pos.main.personal.order.OrderListDelegate;
 import com.yjnull.latte.pos.main.personal.profile.UserProfileDelegate;
+import com.yjnull.latte.pos.main.personal.settings.SettingsDelegate;
 import com.yjnull.latte_core.delegates.bottom.BottomItemDelegate;
 
 import java.util.ArrayList;
@@ -69,11 +71,13 @@ public class PersonalDelegate extends BottomItemDelegate {
                 .setId(1)
                 .setText("收货地址")
                 .setValue("未设置")
+                .setDelegate(new AddressDelegate())
                 .build();
 
         final ListBean system = new ListBean.Builder()
                 .setItemType(ListItemType.ITEM_NORMAL)
                 .setId(2)
+                .setDelegate(new SettingsDelegate())
                 .setText("系统设置")
                 .build();
 
@@ -87,6 +91,7 @@ public class PersonalDelegate extends BottomItemDelegate {
         mRvSettings.setLayoutManager(manager);
         final ListAdapter adapter = new ListAdapter(data);
         mRvSettings.setAdapter(adapter);
+        mRvSettings.addOnItemTouchListener(new PersonalClickListener(this));
 
     }
 }
