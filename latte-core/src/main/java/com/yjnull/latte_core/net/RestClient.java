@@ -141,7 +141,7 @@ public class RestClient {
             request(HttpMethod.POST);
         } else {
             if (!PARAMS.isEmpty()) {
-                throw new RuntimeException("parmas must not be null !");
+                throw new RuntimeException("parmas must be null !");
             }
             request(HttpMethod.POST_RAW);
         }
@@ -152,7 +152,7 @@ public class RestClient {
             request(HttpMethod.PUT);
         } else {
             if (!PARAMS.isEmpty()) {
-                throw new RuntimeException("parmas must not be null !");
+                throw new RuntimeException("parmas must be null !");
             }
             request(HttpMethod.PUT_RAW);
         }

@@ -40,7 +40,7 @@ public interface RestService {
     @PUT
     Call<String> put(@Url String url, @FieldMap Map<String, Object> params);
 
-    @POST
+    @PUT
     Call<String> putRaw(@Url String url, @Body RequestBody body);
 
     @DELETE
